@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<head>
-    <title>
-        
-    </title>
-</head>
-<body>
-    hi
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+    Title changed
+{% endblock  %} 
+
+{% block body %}
+    {% for post in posts  %}
+        {% include "includes/post.html" with post=post show_detail_link=True %}
+    {% endfor %}
+{% endblock body %}
